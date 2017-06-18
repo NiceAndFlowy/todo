@@ -1,0 +1,10 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  min-width: 200px;
+  max-width: 550px;
+  margin: auto;
+  border: 1px solid goldenrod;
+}
