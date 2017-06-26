@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var TodoItems = require('./TodoItems');
+var TodoItem = require('./TodoItem');
 var ENTER_KEY = 13;
 
 class Todo extends React.Component {
@@ -13,8 +13,13 @@ class Todo extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChecked = this.handleChecked.bind(this);
   }
   
+  handleChecked(event) {
+    
+  }
+
   handleChange(event) {
     var value = event.target.value;
     this.setState(()=>{
@@ -28,7 +33,9 @@ class Todo extends React.Component {
     var currentTodoList = this.state.entries;
     var newItem = {
       value: this.state.newTodo,
-      key: Date.now() 
+      key: Date.now(),
+      completed: false,
+       
     };
     currentTodoList.push(newItem);
     console.log('Entries:', currentTodoList);
@@ -48,6 +55,18 @@ class Todo extends React.Component {
     }
   }
   render() {
+    var shownTodos = this.state.entries;
+    var todoItems = shownTodos.map((item, index) => {
+      return (
+        <TodoItem 
+          value={item.value} 
+          key={item.key} 
+          id={index}
+          onChecked={this.handleChecked}
+          completed={item.completed}
+        />
+      )
+    })
     return (
       <div className='container'> 
         <header>
@@ -59,7 +78,9 @@ class Todo extends React.Component {
           onKeyDown={this.handleKeyDown}
           />
         </header>
-        <TodoItems entries={this.state.entries}/>
+        <ul>
+          {todoItems}
+        </ul>
       </div>
     )
   }

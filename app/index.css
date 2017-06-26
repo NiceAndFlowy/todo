@@ -8,3 +8,16 @@ body {
   margin: auto;
   border: 1px solid goldenrod;
 }
+
+.row {
+  display: flex;
+  
+}
+
+.todo-item li {
+  list-style-type: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
