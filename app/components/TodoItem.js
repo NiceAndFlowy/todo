@@ -26,7 +26,11 @@ class TodoItem extends React.Component {
         <input type='checkbox'
           onChange={this.handleChange}
         />
-        <li className={(this.state.isDone ? 'completed' : '')}>{this.props.value}</li>      
+        <li className={(this.state.isDone ? 'completed' : '')}>{this.props.value}</li>
+        <button className='delete'
+          onClick={this.props.onClick}>
+          x
+        </button>      
       </div>
     )
   }

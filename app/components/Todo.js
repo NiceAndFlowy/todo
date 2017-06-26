@@ -14,6 +14,7 @@ class Todo extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
   handleChecked(event) {
@@ -28,7 +29,17 @@ class Todo extends React.Component {
       }
     })
   }
-
+  handleClick(index, event) {
+    var newEntries = this.state.entries.slice();
+    if (index > -1) newEntries.splice(index,1);
+    
+    this.setState( ()=> {
+      return {
+        entries: newEntries
+      }
+    });
+  }
+  
   handleSubmit(event) {
     var currentTodoList = this.state.entries;
     var newItem = {
@@ -54,6 +65,8 @@ class Todo extends React.Component {
       this.handleSubmit(event);
     }
   }
+
+
   render() {
     var shownTodos = this.state.entries;
     var todoItems = shownTodos.map((item, index) => {
@@ -63,6 +76,7 @@ class Todo extends React.Component {
           key={item.key} 
           id={index}
           onChecked={this.handleChecked}
+          onClick={this.handleClick.bind(null,index)}
           completed={item.completed}
         />
       )
