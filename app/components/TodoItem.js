@@ -7,26 +7,26 @@ class TodoItem extends React.Component {
       id: this.props.id,
       isDone: false
     }
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    var checked = event.target.checked;
-    this.setState( () => {
-      return {
-        isDone: checked
-      }
-    })
+  // handleChange(event) {
+  //   var checked = event.target.checked;
+  //   this.setState( () => {
+  //     return {
+  //       isDone: checked
+  //     }
+  //   })
     
-  }
+  // }
 
   render(){ 
     return (
       <div className='row todo-item' id={this.props.id}>
         <input type='checkbox'
-          onChange={this.handleChange}
+          onChange={this.props.onChecked}
         />
-        <li className={(this.state.isDone ? 'completed' : '')}>{this.props.value}</li>
+        <li className={(this.props.completed ? 'completed' : '')}>{this.props.value}</li>
         <button className='delete'
           onClick={this.props.onClick}>
           x
@@ -35,21 +35,5 @@ class TodoItem extends React.Component {
     )
   }
 }
-/*class TodoItems extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      entries: this.props.entries
-    }
-  }
-  render() {
-    var todoList = this.props.entries;
-    return (
-      <ul>
-        {todoList.map((item) => <TodoItem value={item.value} key={item.key}/>)}
-      </ul>
-    )
-  }
-}*/
 
 module.exports = TodoItem;
