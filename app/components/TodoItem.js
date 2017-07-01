@@ -25,6 +25,7 @@ class TodoItem extends React.Component {
       <div className='row todo-item' id={this.props.id}>
         <input type='checkbox'
           onChange={this.props.onChecked}
+          checked={(this.props.completed ? 'checked' : '')}
         />
         <li className={(this.props.completed ? 'completed' : '')}>{this.props.value}</li>
         <button className='delete'

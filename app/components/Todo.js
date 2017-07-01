@@ -103,11 +103,7 @@ componentDidMount() {
 }
 
   render() {
-    // var currentFilter;
-    // if (typeof this.props.location.state.currentFilter !== "undefined") 
-    //   currentFilter = this.props.location.state.currentFilter; 
-    // else 
-    //   currentFilter = null;
+
     var currentFilter = this.state.currentFilter;
     var shownTodos = this.state.entries.filter((element) => {
       // switch (this.state.currentFilter) {
@@ -123,8 +119,8 @@ componentDidMount() {
       else if (currentFilter === this.COMPLETED_TODOS) return element.completed;
       else return element;
     });
-    console.log('this.state.entries:', this.state.entries);
-    console.log('shownTodos:', shownTodos);
+    //console.log('this.state.entries:', this.state.entries);
+    //console.log('shownTodos:', shownTodos);
     var todoItems = shownTodos.map((item, index) => {
       return (
         <TodoItem 
@@ -159,7 +155,7 @@ componentDidMount() {
         <Link className='blah' to='/completed' onClick={this.handleListFilter.bind(null,this.COMPLETED_TODOS)}>
           Completed
         </Link>
-        <ul>
+        <ul className='todo-list'>
           {todoItems}
         </ul>
       </div>

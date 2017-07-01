@@ -11,14 +11,41 @@ body {
 
 .row {
   display: flex;
-  
+  align-items: center;
+  min-width: 200px;
+  border: 1px solid goldenrod;
 }
 
-.todo-item li {
+li {
   list-style-type: none;
+  text-align: left;
+  display: block;
+  border: 1px solid goldenrod;
+  width: 87%;
+  word-break: break-all;
+  white-space:pre-line;
 }
 
 .completed {
   text-decoration: line-through;
   color: #d9d9d9;
+  align-self: flex-start;
+  width: 5%;
+}
+
+.todo-list .todo-item .delete {
+  display: none;
+  color: #cc9a9a;
+}
+
+.todo-list .todo-item:hover .delete {
+  display: flex;
+  color: #cc9a9a;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 5%;
+}
+
+.row:hover {
 }
