@@ -1,15 +1,15 @@
-var React = require('react');
-var Todo = require('./Todo');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
+const React = require('react');
+const Todo = require('./Todo');
+const ReactRouter = require('react-router-dom');
+const Router = ReactRouter.BrowserRouter;
+const Route = ReactRouter.Route;
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <Route path='/' component={Todo}></Route>
+        <Route path="/" component={Todo} />
       </Router>
-    )
+    );
   }
 }
 

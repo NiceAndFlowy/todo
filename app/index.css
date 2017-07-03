@@ -1,8 +1,10 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
 .container {
+  font-size: 24px;
   min-width: 200px;
   max-width: 550px;
   margin: auto;
@@ -10,42 +12,91 @@ body {
 }
 
 .row {
+  background-color: white;
   display: flex;
   align-items: center;
+  margin: auto;
   min-width: 200px;
-  border: 1px solid goldenrod;
+  border-bottom: 1px solid #ededed;
+  
 }
 
-li {
+.row li {
   list-style-type: none;
   text-align: left;
   display: block;
-  border: 1px solid goldenrod;
-  width: 87%;
+  width: 84%;
   word-break: break-all;
   white-space:pre-line;
+  padding: 15px;  
 }
 
+.checkbox {
+  width: 5%;
+  border: none;
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
+
+/* After todo item is checked */
 .completed {
   text-decoration: line-through;
   color: #d9d9d9;
-  align-self: flex-start;
-  width: 5%;
 }
 
+/* Delete Button */
 .todo-list .todo-item .delete {
   display: none;
-  color: #cc9a9a;
 }
 
 .todo-list .todo-item:hover .delete {
   display: flex;
+  background-color: Transparent;
   color: #cc9a9a;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  outline: none;  
   width: 5%;
+  border: none;
 }
 
+/* ================= */
+h1 {
+  font-size: 3.2em;
+  color: rgba(175, 47, 47, 0.15);
+  text-align: center;
+}
+
+.todo-input {
+  font-style: italic;
+  margin: auto;
+  border: none;
+  outline: none;
+  display: block;
+  width: 87%;
+  word-break: break-all;
+  white-space:pre-line;
+  padding: 15px 15px 15px 15px;
+  border-bottom: 1px solid #ededed;
+  
+}
 .row:hover {
+}
+
+.todo-list {
+  margin: auto;
+  border: none;
+  outline: none;
+  display: block;
+  width: 87%;
+  word-break: break-all;
+  white-space:pre-line;
+  padding-left: 0;
+  padding: 0px 15px 0px 15px;
+  background: white;
+}
+
+.links {
+  
 }

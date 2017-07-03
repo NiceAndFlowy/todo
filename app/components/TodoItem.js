@@ -23,7 +23,7 @@ class TodoItem extends React.Component {
   render(){ 
     return (
       <div className='row todo-item' id={this.props.id}>
-        <input type='checkbox'
+        <input type='checkbox' className='checkbox'
           onChange={this.props.onChecked}
           checked={(this.props.completed ? 'checked' : '')}
         />
